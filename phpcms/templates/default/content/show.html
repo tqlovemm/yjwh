@@ -1,0 +1,47 @@
+{template "content","header_self"}
+<div class="container" style="margin-top: 20px;">
+	<div class="row">
+
+		<div class="col-md-3">
+
+			<img class="img-responsive img-thumbnail" src="{$thumb}">
+			<h4 style="color:gray;">服务项目：<span style="color:black;">{$title}</span></h4>
+			<h4 style="color:gray;">服务内容：<span>{$content}</span></h4>
+
+		</div>
+		<div class="col-md-9">
+
+			<div id="Article" style="min-height: 500px;">
+					<span>{$inputtime}&nbsp;&nbsp;&nbsp;来源：{$copyfrom}&nbsp;&nbsp;&nbsp;点击：</span><span id="hits"></span></h1>
+				{if $description}<div class="summary" >{$description}</div>{/if}
+				<div class="content">
+					{if $allow_visitor==1}
+					{$content}
+					<!--内容关联投票-->
+					{if $voteid}<script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid={$voteid}&type=2"></script>{/if}
+
+					{else}
+					<CENTER><a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}"><font color="red">阅读此信息需要您支付 <B><I>{$readpoint} {if $paytype}元{else}点{/if}</I></B>，点击这里支付</font></a></CENTER>
+					{/if}
+				</div>
+				{if $titles}
+				<fieldset>
+					<legend class="f14">本文导航</legend>
+					<ul class="list blue row-2">
+						{loop $titles $r}
+						<li>{$n}、<a href="{$r[url]}">{$r[title]}</a></li>
+						{/loop}
+					</ul>
+				</fieldset>
+				{/if}
+				<div id="pages" class="text-c">{$pages}</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+{template "content","footer"}
