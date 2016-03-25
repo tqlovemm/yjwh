@@ -11,12 +11,12 @@
                     <ul>
                         {pc:content  action="lists" catid="11" order="updatetime DESC" thumb="1" num="8" return="info"}
                         {loop $info $v}
-                        <li><span style="background: url({$v[thumb]}) center no-repeat;"></span></li>
+                        <li><a href="{$v[url]}"><span style="background: url({$v[thumb]}) center no-repeat;"></span></a></li>
                         {/loop}
                         {/pc}
                     </ul>
-                    <a href="javascript:;" id="btn_prev"></a>
-                    <a href="javascript:;" id="btn_next"></a>
+                    <a href="javascript:;" id="btn_prev" style="color:white;font-size: 60px;"> < </a>
+                    <a href="javascript:;" id="btn_next" style="color:white;font-size: 60px;"> > </a>
                 </div>
             </div>
     </section>
@@ -91,13 +91,15 @@
                 {pc:content  action="lists" catid="13" order="updatetime DESC" thumb="1" num="8" return="info"}
                 {loop $info $v}
                 <div class="col-md-4 col-sm-6 col-xs-12 text-center wow animated zoomIn">
+                    <a href="{$v[url]}">
                     <div class="service-item">
                         <div class="service-icon">
                             <img class="img-responsive center-block" src="{$v[thumb]}">
                         </div>
                         <h4 class="text-left">{$v['title']}</h4>
-                        <p style="font-size: 14px;text-align: left;">{$v['description']} </p>
+                        <p style="font-size: 14px;text-align: left;color:grey;">{$v['description']} </p>
                     </div>
+                    </a>
                 </div>
                 {/loop}
                 {/pc}
@@ -121,27 +123,29 @@
             <div class="row">
                 <div class="col-md-4 notice wow animated zoomInLeft">
                     <div style="border-bottom: 1px solid #9f9f9f;display: block;padding:5px;font-weight: bold;">
-                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【通知】</div><span class="pull-right" style="color:#DF9017;"> >>  </span>
+                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【通知】</div><a class="pull-right" href="/index.php?m=content&c=index&a=lists&catid=35" style="color:#DF9017;"> >>  </a>
                         <div class="clearfix"></div>
                     </div>
                     {pc:content  action="lists" catid="35" order="updatetime DESC" thumb="1" num="1" return="info"}
                     {loop $info $v}
                     <div class="notice-box">
+                        <a href="{$v[url]}">
                         <h2 style="color:#545454;">{$v[title]}</h2>
                         <div class="box-content" style="color:#545454;position: relative;">
                             <img class="img-responsive content-img" src="{$v[thumb]}">
                             <p class="content-text" style="background-color: rgba(15, 183, 255, 0.66);">{$v[description]}</p>
                         </div>
+                        </a>
                     </div>
                     <div class="clearfix" style="margin-top: 20px;"></div>
-                    <a style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
+                    <a href="/index.php?m=content&c=index&a=lists&catid=35" style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
                     {/loop}
                     {/pc}
                 </div>
 
                 <div class="col-md-4 wow animated zoomIn">
                     <div style="border-bottom: 1px solid #9f9f9f;display: block;padding:5px;font-weight: bold;">
-                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【活动】</div><span class="pull-right" style="color:#DF9017;"> >>  </span>
+                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【活动】</div><a href="/index.php?m=content&c=index&a=lists&catid=36" class="pull-right" style="color:#DF9017;"> >>  </a>
                         <div class="clearfix"></div>
                     </div>
                     {pc:content  action="lists" catid="36" order="updatetime DESC" thumb="1" num="1" return="info"}
@@ -154,7 +158,7 @@
                         </div>
                     </div>
                     <div class="clearfix" style="margin-top: 20px;"></div>
-                    <a style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
+                    <a href="/index.php?m=content&c=index&a=lists&catid=36" style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
                     {/loop}
                     {/pc}
                 </div>

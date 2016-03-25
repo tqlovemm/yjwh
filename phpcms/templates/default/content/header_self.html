@@ -74,12 +74,21 @@
 		.my-active{color:white !important;background:rgb(234, 163, 34); }
 		.hotspot-title li{ height: 15px;}
 		#btn_prev,#btn_next{z-index:11111;position:absolute;width:73px!important;height:74px!important;top:50%;margin-top:-37px;display: none;}
-		#btn_prev{background:url(/statics/images/yj/hover_left.png) no-repeat left top;left:100px;}
-		#btn_next{background:url(/statics/images/yj/hover_right.png) no-repeat right top;right:100px;}
+		#btn_prev{left:100px;}
+		#btn_next{right:100px;}
 
 		.notice-box:hover .content-text{opacity: 0.8; filter: alpha(opacity=80); }
 		.content-text{position: absolute;opacity: 0;filter: alpha(opacity=0); top:0;left:0;color:white;font-size: 20px;padding:20px;width: 100%;height: 100%;transition: 400ms;}
-
+		.breadcrumb a:after {
+			padding: 0 5px;
+			color: #ccc;
+			content: " /\00a0";
+		}
+		.breadcrumb > li+li:before {
+			padding: 0 5px;
+			color: #ccc;
+			content: none !important;
+		}
 	</style>
 </head>
 
