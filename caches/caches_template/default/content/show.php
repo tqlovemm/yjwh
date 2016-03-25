@@ -4,15 +4,15 @@
 
 		<div class="col-md-3">
 
-			<img class="img-responsive img-thumbnail" src="<?php echo $thumb;?>">
+			<img class="img-responsive img-thumbnail" alt="<?php echo $title;?>" src="<?php echo $thumb;?>">
 			<h4 style="color:gray;">服务项目：<span style="color:black;"><?php echo $title;?></span></h4>
-			<h4 style="color:gray;">服务内容：<span><?php echo $content;?></span></h4>
+			<h4 style="color:gray;">服务内容：<span><?php echo $description;?></span></h4>
 
 		</div>
 		<div class="col-md-9">
 
 			<div id="Article" style="min-height: 500px;">
-					<span><?php echo $inputtime;?>&nbsp;&nbsp;&nbsp;来源：<?php echo $copyfrom;?>&nbsp;&nbsp;&nbsp;点击：</span><span id="hits"></span></h1>
+					<span><?php echo $inputtime;?>&nbsp;&nbsp;&nbsp;来源：<?php echo $copyfrom;?>&nbsp;&nbsp;&nbsp;</span></h1>
 				<?php if($description) { ?><div class="summary" ><?php echo $description;?></div><?php } ?>
 				<div class="content">
 					<?php if($allow_visitor==1) { ?>

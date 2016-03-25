@@ -39,7 +39,7 @@
   }
   .service .marketing span {
     background-color: #09c;
-    background-position: -230px 0;
+    background-position: -270px 0;
   }
   .service .planning span {
     background-color: #9c0;
@@ -51,7 +51,7 @@
    }
   .service a.marketing:hover span {
 
-     background-position: -230px -138px;
+     background-position: -270px -138px;
    }
   .service a.advertising:hover span {
 
@@ -100,7 +100,7 @@
       <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
         <div class="col-md-3 service home-service">
           <a style="height: 247px;" href="<?php echo $v['url'];?>" rel="new" class="marketing">
-            <span style="background-image:url(<?php echo $v['thumb'];?>)"><?php echo $v['title'];?></span>
+            <span title="270X276" style="background-image:url(<?php echo $v['thumb'];?>);"><?php echo $v['title'];?></span>
             <?php echo $v['description'];?>
           </a>
         </div>

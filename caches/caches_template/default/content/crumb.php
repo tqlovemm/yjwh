@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<?php if($CATEGORYS[$catid][image]) { ?>
-		<img style="width: 100%;height:220px;" src="<?php echo $CATEGORYS[$catid]['image'];?>">
+		<img title="1760x220" alt="<?php echo $CATEGORYS[$catid]['title'];?>" style="width: 100%;height:220px;" src="<?php echo $CATEGORYS[$catid]['image'];?>">
 		<?php } ?>
 	</div>
 </div>

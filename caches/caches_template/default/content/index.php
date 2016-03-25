@@ -10,7 +10,7 @@
         <div id="slider" class="sl-slider-wrapper">
             <div class="sl-slider">
 
-                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=be99ec336c40f0b3ea38761d22585a88&action=lists&catid=11&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">修改</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'11','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=be99ec336c40f0b3ea38761d22585a88&action=lists&catid=11&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'11','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
                 <?php $count=0;?>
                 <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
 
@@ -26,7 +26,6 @@
                         <div class="caption-content">
                             <h2 class="animated fadeInDown"><?php echo $v['title'];?></h2>
                             <span class="animated fadeInDown"><?php echo $v['description'];?></span>
-                            <a href="#" class="btn btn-blue btn-effect">Join US</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +86,7 @@
     <section id="what-we-can" style="padding:20px 0;">
         <div class="container">
             <div class="row">
-                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=16b87aa82712bc011ca85d123276ef48&action=lists&catid=12&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">修改</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'12','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=16b87aa82712bc011ca85d123276ef48&action=lists&catid=12&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'12','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
                 <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                     <div class="col-md-2 col-sm-6 col-xs-6 bannerBottom">
                         <a href="<?php echo $v['url'];?>" target="_blank">
@@ -117,11 +116,11 @@
 
                 <ul class="project-wrapper wow animated fadeInUp">
 
-                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=b549d93a3ba79140d1d97d783f3a4169&action=lists&catid=10&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">修改</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'10','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=b549d93a3ba79140d1d97d783f3a4169&action=lists&catid=10&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'10','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
 
                     <li class="portfolio-item">
-                        <img src="<?php echo thumb($v[thumb],381,290,0);?>" class="img-responsive" alt="<?php echo $v['title'];?>" title="<?php echo $v['title'];?>">
+                        <img src="<?php echo $v['thumb'];?>" class="img-responsive" alt="<?php echo $v['title'];?>" title="363x276">
                         <figcaption class="mask">
                             <h3><?php echo $v['title'];?></h3>
                             <p><?php echo str_cut($v['description'],100);?> </p>
@@ -223,7 +222,7 @@
                 </div>
 
 
-                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=683088ede309a2db0e1e8e8a0ef13b3e&action=lists&catid=13&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">修改</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'13','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=683088ede309a2db0e1e8e8a0ef13b3e&action=lists&catid=13&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'13','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
                 <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                 <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
                     <div class="service-item">
@@ -296,7 +295,7 @@
 
                         <div id="testimonial" class=" wow animated fadeInUp">
 
-                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=86fab952d2d31dfdb0c92ac9f4159661&action=lists&catid=14&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">修改</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'14','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=86fab952d2d31dfdb0c92ac9f4159661&action=lists&catid=14&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'14','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
                         <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
 
                         <a href="<?php echo $v['url'];?>" style="color:#313131;">
@@ -399,7 +398,7 @@
                     </div>
 
                     <div class="social-button">
-                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=86fab952d2d31dfdb0c92ac9f4159661&action=lists&catid=14&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">修改</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'14','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=86fab952d2d31dfdb0c92ac9f4159661&action=lists&catid=14&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'14','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
                         <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                             <div class="col-md-2 col-xs-4 wow animated zoomIn"><a href="<?php echo $v['url'];?>"><img class="img-responsive center-block" src="<?php echo $v['thumb'];?>"></a></div>
                         <?php $n++;}unset($n); ?>

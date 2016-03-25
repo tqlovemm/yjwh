@@ -2,7 +2,7 @@
 
 <main class="site-content" role="main">
     <?php include template("content","crumb"); ?>
-    <div class="container" style="margin-top: 20px;">
+    <div class="container" style="margin-top: 20px;min-height: 35em;padding-bottom:20px;">
 
         <ul id="myTab" class="nav nav-tabs">
             <li class="active"><a href="#brand" data-toggle="tab">品牌设计</a></li>
@@ -14,13 +14,13 @@
             <div class="tab-pane fade in active" id="brand">
 
                 <div class="row">
-                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=68f6204da259bcc103f7fe4cfd11f646&action=lists&catid=20&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'20','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=6ed3000f1338406dec3d0f75adb14e30&action=lists&catid=20&order=updatetime+DESC&thumb=1&num=64&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'20','order'=>'updatetime DESC','thumb'=>'1','limit'=>'64',));}?>
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <a href="<?php echo $v['url'];?>" target="_blank">
                             <p class="bannerBottomImage"><img class="center-block img-thumbnail" title="250x200" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
                             <p class="bannerBottomTitle"><?php echo $v['title'];?><br>
-                                <span style="display: block;"><?php echo $v['description'];?></span>
+                                <span style="display: block;"><?php echo str_cut($v['description'],80);?></span>
                             </p>
                         </a>
                     </div>
@@ -31,13 +31,13 @@
             </div>
             <div class="tab-pane fade" id="adv">
                 <div class="row">
-                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=af9a657164888270141420c16f475867&action=lists&catid=23&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'23','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=d371a90adeef7a05023d58ecdeec1af7&action=lists&catid=23&order=updatetime+DESC&thumb=1&num=64&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'23','order'=>'updatetime DESC','thumb'=>'1','limit'=>'64',));}?>
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <a href="<?php echo $v['url'];?>" target="_blank">
                             <p class="bannerBottomImage"><img class="center-block img-thumbnail" title="250x200" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
                             <p class="bannerBottomTitle"><?php echo $v['title'];?><br>
-                                <span style="display: block;"><?php echo $v['description'];?></span>
+                                <span style="display: block;"><?php echo str_cut($v['description'],80);?></span>
                             </p>
                         </a>
                     </div>
@@ -47,13 +47,13 @@
             </div>
             <div class="tab-pane fade" id="network_marketing">
                 <div class="row">
-                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=aa69a2955fa7b9fb6d10215335d01f2c&action=lists&catid=24&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'24','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=a31dccb0f3b0200d243918dbb855cb8c&action=lists&catid=24&order=updatetime+DESC&thumb=1&num=64&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'24','order'=>'updatetime DESC','thumb'=>'1','limit'=>'64',));}?>
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <a href="<?php echo $v['url'];?>" target="_blank">
                             <p class="bannerBottomImage"><img class="center-block img-thumbnail" title="250x200" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
                             <p class="bannerBottomTitle"><?php echo $v['title'];?><br>
-                                <span style="display: block;"><?php echo $v['description'];?></span>
+                                <span style="display: block;"><?php echo str_cut($v['description'],80);?></span>
                             </p>
                         </a>
                     </div>
@@ -63,13 +63,13 @@
             </div>
             <div class="tab-pane fade" id="activities">
                 <div class="row">
-                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=c42af5390e89e717d5ccd9a0a90ef2f9&action=lists&catid=25&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'25','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=b6f8075b70c67ac4df838f15e33f525c&action=lists&catid=25&order=updatetime+DESC&thumb=1&num=64&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'25','order'=>'updatetime DESC','thumb'=>'1','limit'=>'64',));}?>
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <a href="<?php echo $v['url'];?>" target="_blank">
                             <p class="bannerBottomImage"><img class="center-block img-thumbnail" title="250x200" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
                             <p class="bannerBottomTitle"><?php echo $v['title'];?><br>
-                                <span style="display: block;"><?php echo $v['description'];?></span>
+                                <span style="display: block;"><?php echo str_cut($v['description'],80);?></span>
                             </p>
                         </a>
                     </div>
