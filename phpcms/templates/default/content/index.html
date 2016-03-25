@@ -1,85 +1,24 @@
 {template "content","header_self"}
 
+
 <main class="site-content" role="main">
 
-    <!--
-    Home Slider
-    ==================================== -->
+    <!--Home Slider==================================== -->
 
     <section id="home-slider">
-        <div id="slider" class="sl-slider-wrapper">
-            <div class="sl-slider">
-
-                {pc:content  action="lists" catid="11" order="updatetime DESC" thumb="1" num="8" return="info"}
-                {php $count=0;}
-                {loop $info $v}
-
-                {php $count++;}
-                {if $count%2==0}
-                    <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                {else}
-                    <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                {/if}
-
-                  <div class="bg-img" style="background-image: url('{$v[thumb]}');"></div>
-                    <div class="slide-caption">
-                        <div class="caption-content">
-                            <h2 class="animated fadeInDown">{$v['title']}</h2>
-                            <span class="animated fadeInDown">{$v['description']}</span>
-                        </div>
-                    </div>
+            <div class="main_visual">
+                <div class="main_image">
+                    <ul>
+                        {pc:content  action="lists" catid="11" order="updatetime DESC" thumb="1" num="8" return="info"}
+                        {loop $info $v}
+                        <li><span style="background: url({$v[thumb]}) center no-repeat;"></span></li>
+                        {/loop}
+                        {/pc}
+                    </ul>
+                    <a href="javascript:;" id="btn_prev"></a>
+                    <a href="javascript:;" id="btn_next"></a>
                 </div>
-                {/loop}
-                {/pc}
-        <!--        <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                    <div class="bg-img bg-img-1"></div>
-                    <div class="slide-caption">
-                        <div class="caption-content">
-                            <h2 class="animated fadeInDown">全方位服务</h2>
-                            <span class="animated fadeInDown">FULL SERVICE</span>
-                            <a href="#" class="btn btn-blue btn-effect">Join US</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-                    <div class="bg-img bg-img-2"></div>
-                    <div class="slide-caption">
-                        <div class="caption-content">
-                            <h2>强有力执行</h2>
-                            <span>STRONG EXECUTION</span>
-                            <a href="#" class="btn btn-blue btn-effect">Join US</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-                    <div class="bg-img bg-img-3"></div>
-                    <div class="slide-caption">
-                        <div class="caption-content">
-                            <h2>多领域经验</h2>
-                            <span>MULTIDISCIPLINARY EXPERIENCE</span>
-                            <a href="#" class="btn btn-blue btn-effect">Join US</a>
-                        </div>
-                    </div>
-                </div>
-            -->
-            </div><!-- /sl-slider -->
-
-            <nav id="nav-arrows" class="nav-arrows">
-                <a href="javascript:;" class="sl-prev">
-                    <i class="fa fa-angle-left fa-3x"></i>
-                </a>
-                <a href="javascript:;" class="sl-next">
-                    <i class="fa fa-angle-right fa-3x"></i>
-                </a>
-            </nav>
-
-            <nav id="nav-dots" class="nav-dots visible-xs visible-sm hidden-md hidden-lg">
-                <span class="nav-dot-current"></span>
-                <span></span>
-                <span></span>
-            </nav>
-
-        </div><!-- /slider-wrapper -->
+            </div>
     </section>
 
 
@@ -120,10 +59,10 @@
                     {loop $info $v}
 
                     <li class="portfolio-item">
-                        <img src="{$v[thumb]}" class="img-responsive" alt="{$v['title']}" title="363x276">
+                        <img src="{$v[thumb]}" class="img-responsive" alt="{$v['title']}">
                         <figcaption class="mask">
                             <h3>{$v['title']}</h3>
-                            <p>{str_cut($v['description'],100)} </p>
+                            <p>{str_cut($v['description'],80)} </p>
                         </figcaption>
                         <ul class="external">
                             <li><a class="fancybox" title="{str_cut($v['description'],150)}" data-fancybox-group="works" href="{thumb($v[thumb],381,290,0)}"><i class="fa fa-search"></i></a></li>
@@ -132,80 +71,7 @@
                     </li>
                     {/loop}
                     {/pc}
-<!--
-                    <li class="portfolio-item">
-                        <img src="{IMG_PATH}yj/portfolio/item.jpg" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
-                        <figcaption class="mask">
-                            <h3>Wall street</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-                        </figcaption>
-                        <ul class="external">
-                            <li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="{IMG_PATH}yj/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>
-                            <li><a href=""><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </li>
-
-                    <li class="portfolio-item">
-                        <img src="{IMG_PATH}yj/portfolio/item2.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-                        <figcaption class="mask">
-                            <h3>Wall street</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-                        </figcaption>
-                        <ul class="external">
-                            <li><a class="fancybox" title="Wall street" href="{IMG_PATH}yj/slider/banner.jpg" data-fancybox-group="works" ><i class="fa fa-search"></i></a></li>
-                            <li><a href=""><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </li>
-
-                    <li class="portfolio-item">
-                        <img src="{IMG_PATH}yj/portfolio/item3.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-                        <figcaption class="mask">
-                            <h3>Wall street</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-                        </figcaption>
-                        <ul class="external">
-                            <li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="{IMG_PATH}yj/portfolio/item3.jpg"><i class="fa fa-search"></i></a></li>
-                            <li><a href=""><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </li>
-
-                    <li class="portfolio-item">
-                        <img src="{IMG_PATH}yj/portfolio/item4.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
-                        <figcaption class="mask">
-                            <h3>Wall street</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-                        </figcaption>
-                        <ul class="external">
-                            <li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="{IMG_PATH}yj/portfolio/item4.jpg"><i class="fa fa-search"></i></a></li>
-                            <li><a href=""><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </li>
-
-                    <li class="portfolio-item">
-                        <img src="{IMG_PATH}yj/portfolio/item5.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-                        <figcaption class="mask">
-                            <h3>Wall street</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-                        </figcaption>
-                        <ul class="external">
-                            <li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="{IMG_PATH}yj/portfolio/item5.jpg"><i class="fa fa-search"></i></a></li>
-                            <li><a href=""><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </li>
-
-                    <li class="portfolio-item">
-                        <img src="{IMG_PATH}yj/portfolio/item6.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-                        <figcaption class="mask">
-                            <h3>Wall street</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-                        </figcaption>
-                        <ul class="external">
-                            <li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="{IMG_PATH}yj/portfolio/item6.jpg"><i class="fa fa-search"></i></a></li>
-                            <li><a href=""><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </li>-->
                 </ul>
-
             </div>
         </div>
     </section>
@@ -224,248 +90,168 @@
 
                 {pc:content  action="lists" catid="13" order="updatetime DESC" thumb="1" num="8" return="info"}
                 {loop $info $v}
-                <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
+                <div class="col-md-4 col-sm-6 col-xs-12 text-center wow animated zoomIn">
                     <div class="service-item">
                         <div class="service-icon">
                             <img class="img-responsive center-block" src="{$v[thumb]}">
                         </div>
-                        <h3>{$v['title']}</h3>
-                        <p>{$v['description']} </p>
+                        <h4 class="text-left">{$v['title']}</h4>
+                        <p style="font-size: 14px;text-align: left;">{$v['description']} </p>
                     </div>
                 </div>
                 {/loop}
                 {/pc}
-
-             <!--   <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <img class="img-responsive center-block" src="{$v[thumb]}">
-                        </div>
-                        <h3>Support</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                    </div>
-                </div>
--->
-<!--                <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-tasks fa-3x"></i>
-                        </div>
-                        <h3>Well Documented</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-clock-o fa-3x"></i>
-                        </div>
-                        <h3>Design UI/UX</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-heart fa-3x"></i>
-                        </div>
-
-                        <h3>Web Security</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                    </div>
-                </div>-->
-
             </div>
         </div>
     </section>
     <!-- end Service section -->
 
+    <!--Hotspot  section-->
 
-    <!-- Testimonial section -->
-  <!--  <section id="testimonials" class="parallax">
-        <div class="overlay">
+        <section id="hotspot">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="sec-title text-center white wow animated fadeInDown">
-                            <h2>最新通知</h2>
-                        </div>
+            <hr style="border-bottom: 1px solid #9f9f9f;">
 
-                        <div id="testimonial" class=" wow animated fadeInUp">
+             <ul class="list-inline text-center hotspot-title" style="font-size: 25px;margin-bottom: 40px;">
+                 <li class="hidden-sm hidden-xs"><div style="width: 80px;background-color:#DF9017;height: 5px;"></div></li>
+                 <li class="text-center"><h2 style="background-color: #DF9017;padding:3px 20px;">遇见热点</h2></li>
+                 <li class="hidden-sm hidden-xs"><div style="width: 80px;background-color:#DF9017;height: 5px;"></div></li>
+             </ul>
 
-                        {pc:content  action="lists" catid="14" order="updatetime DESC" thumb="1" num="8" return="info"}
-                        {loop $info $v}
-
-                        <a href="{$v[url]}" style="color:#313131;">
-                            <div class="testimonial-item text-center">
-                                <img src="{$v[thumb]}" alt="Our Clients">
-                                <div class="clearfix">
-                                    <span>{$v[title]}</span>
-                                    <p>{$v['description']}</p>
-                                </div>
-                            </div>
-                        </a>
-                        {/loop}
-                        {/pc}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- end Testimonial section -->
-
-    <!-- Price section -->
-  <!--  <section id="price">
-        <div class="container">
             <div class="row">
-
-                <div class="sec-title text-center wow animated fadeInDown">
-                    <h2>Price</h2>
-                    <p>Our price for your company</p>
+                <div class="col-md-4 notice wow animated zoomInLeft">
+                    <div style="border-bottom: 1px solid #9f9f9f;display: block;padding:5px;font-weight: bold;">
+                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【通知】</div><span class="pull-right" style="color:#DF9017;"> >>  </span>
+                        <div class="clearfix"></div>
+                    </div>
+                    {pc:content  action="lists" catid="35" order="updatetime DESC" thumb="1" num="1" return="info"}
+                    {loop $info $v}
+                    <div class="notice-box">
+                        <h2 style="color:#545454;">{$v[title]}</h2>
+                        <div class="box-content" style="color:#545454;position: relative;">
+                            <img class="img-responsive content-img" src="{$v[thumb]}">
+                            <p class="content-text" style="background-color: rgba(15, 183, 255, 0.66);">{$v[description]}</p>
+                        </div>
+                    </div>
+                    <div class="clearfix" style="margin-top: 20px;"></div>
+                    <a style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
+                    {/loop}
+                    {/pc}
                 </div>
 
-                <div class="col-md-4 wow animated fadeInUp">
-                    <div class="price-table text-center">
-                        <span>Silver</span>
-                        <div class="value">
-                            <span>$</span>
-                            <span>24,35</span><br>
-                            <span>month</span>
-                        </div>
-                        <ul>
-                            <li>No Bonus Points</li>
-                            <li>No Bonus Points</li>
-                            <li>No Bonus Points</li>
-                            <li>No Bonus Points</li>
-                            <li><a href="#">sign up</a></li>
-                        </ul>
+                <div class="col-md-4 wow animated zoomIn">
+                    <div style="border-bottom: 1px solid #9f9f9f;display: block;padding:5px;font-weight: bold;">
+                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【活动】</div><span class="pull-right" style="color:#DF9017;"> >>  </span>
+                        <div class="clearfix"></div>
                     </div>
+                    {pc:content  action="lists" catid="36" order="updatetime DESC" thumb="1" num="1" return="info"}
+                    {loop $info $v}
+                    <div class="notice-box">
+                        <h2 style="color:#545454;">{$v[title]}</h2>
+                        <div class="box-content" style="color:#545454;position: relative;">
+                            <img class="img-responsive content-img" src="{$v[thumb]}">
+                            <p class="content-text" style="background-color: rgba(255, 165, 0, 0.66);">{$v[description]}</p>
+                        </div>
+                    </div>
+                    <div class="clearfix" style="margin-top: 20px;"></div>
+                    <a style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
+                    {/loop}
+                    {/pc}
                 </div>
 
-                <div class="col-md-4 wow animated fadeInUp" data-wow-delay="0.4s">
-                    <div class="price-table featured text-center">
-                        <span>Gold</span>
-                        <div class="value">
-                            <span>$</span>
-                            <span>50,00</span><br>
-                            <span>month</span>
-                        </div>
-                        <ul>
-                            <li>Free Trial</li>
-                            <li>Free Trial</li>
-                            <li>Free Trial</li>
-                            <li>Free Trial</li>
-                            <li><a href="#">sign up</a></li>
-                        </ul>
+                <div class="col-md-4 wow animated zoomInRight ">
+                    <div style="border-bottom: 1px solid #9f9f9f;display: block;padding:5px;font-weight: bold;">
+                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【视频】</div><span class="pull-right" style="color:#DF9017;"> >>  </span>
+                        <div class="clearfix"></div>
                     </div>
-                </div>
-
-                <div class="col-md-4 wow animated fadeInUp" data-wow-delay="0.8s">
-                    <div class="price-table text-center">
-                        <span>Diamond</span>
-                        <div class="value">
-                            <span>$</span>
-                            <span>123,12</span><br>
-                            <span>month</span>
+                    <div class="notice-box">
+                        <h2 style="color:#545454;">fwafwef</h2>
+                        <div class="box-content">
+                            <video width="100%" height="100%" controls="controls">
+                                <source src="/statics/video/mov.mp4" type="video/mp4" />
+                                <source src="/statics/video/mov.ogg" type="video/ogg" />
+                                <source src="/statics/video/mov.webm" type="video/webm" />
+                                <object data="/statics/video/mov.mp4" width="320" height="240">
+                                    <embed src="/statics/video/mov.swf" width="320" height="240" />
+                                </object>
+                            </video>
                         </div>
-                        <ul>
-                            <li>All Bonus Points</li>
-                            <li>All Bonus Points</li>
-                            <li>All Bonus Points</li>
-                            <li>All Bonus Points</li>
-                            <li><a href="#">sign up</a></li>
-                        </ul>
                     </div>
+                    <div class="clearfix" style="margin-top: 20px;"></div>
+                    <a style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
                 </div>
 
             </div>
-        </div>
-    </section>-->
-    <!-- end Price section -->
-
-    <!-- Social section -->
-   <!-- <section id="social" class="parallax">
-        <div class="overlay">
-            <div class="container">
-                <div class="row">
-
-                    <div class="sec-title text-center white wow animated fadeInDown">
-                        <h2>我们的团队</h2>
-                        <p>Beautifully simple follow buttons to help you get followers on</p>
-                    </div>
-
-                    <div class="social-button">
-                        {pc:content  action="lists" catid="14" order="updatetime DESC" thumb="1" num="8" return="info"}
-                        {loop $info $v}
-                            <div class="col-md-2 col-xs-4 wow animated zoomIn"><a href="{$v[url]}"><img class="img-responsive center-block" src="{$v[thumb]}"></a></div>
-                        {/loop}
-                        {/pc}
-                       &lt;!&ndash; <li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-2x"></i></a></li>
-                        <li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
-                        <li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>
-                    &ndash;&gt;
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- end Social section -->
-
-    <!-- Contact section -->
-<!--    <section id="contact" >
-        <div class="container">
-            <div class="row">
-
-                <div class="sec-title text-center wow animated fadeInDown">
-                    <h2>Contact</h2>
-                    <p>Leave a Message</p>
-                </div>
-
-
-                <div class="col-md-7 contact-form wow animated fadeInLeft">
-                    <form action="#" method="post">
-                        <div class="input-field">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name...">
-                        </div>
-                        <div class="input-field">
-                            <input type="email" name="email" class="form-control" placeholder="Your Email...">
-                        </div>
-                        <div class="input-field">
-                            <input type="text" name="subject" class="form-control" placeholder="Subject...">
-                        </div>
-                        <div class="input-field">
-                            <textarea name="message" class="form-control" placeholder="Messages..."></textarea>
-                        </div>
-                        <button type="submit" id="submit" class="btn btn-blue btn-effect">Send</button>
-                    </form>
-                </div>
-
-                <div class="col-md-5 wow animated fadeInRight">
-                    <address class="contact-details">
-                        <h3>Contact Us</h3>
-                        <p><i class="fa fa-pencil"></i>Phoenix Inc.<span>PO Box 345678</span> <span>Little Lonsdale St, Melbourne </span><span>Australia</span></p><br>
-                        <p><i class="fa fa-phone"></i>Phone: (415) 124-5678 </p>
-                        <p><i class="fa fa-envelope"></i>website@yourname.com</p>
-                    </address>
-                </div>
 
             </div>
-        </div>
-    </section>-->
-    <!-- end Contact section -->
 
+        </section>
 
+    <!--end Hotspot  section-->
 </main>
 
 <script>
     $(function(){
 
-        $(".yj-home-link").css('color','#EAA322');
+        $(".yj-home-link").addClass('my-active');
     });
+
+            $(document).ready(function(){
+
+              $(".main_visual").hover(function(){
+                    $("#btn_prev,#btn_next").fadeIn()
+                },function(){
+                    $("#btn_prev,#btn_next").fadeOut()
+                });
+
+                $dragBln = false;
+
+                $(".main_image").touchSlider({
+                    flexible : true,
+                    speed : 200,
+                    btn_prev : $("#btn_prev"),
+                    btn_next : $("#btn_next"),
+                    paging : $(".flicking_con a"),
+                    counter : function (e){
+                        $(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+                    }
+                });
+
+                $(".main_image").bind("mousedown", function() {
+                    $dragBln = false;
+                });
+
+                $(".main_image").bind("dragstart", function() {
+                    $dragBln = true;
+                });
+
+                $(".main_image a").click(function(){
+                    if($dragBln) {
+                        return false;
+                    }
+                });
+
+                timer = setInterval(function(){
+                    $("#btn_next").click();
+                }, 3000);
+
+                $(".main_visual").hover(function(){
+                    clearInterval(timer);
+                },function(){
+                    timer = setInterval(function(){
+                        $("#btn_next").click();
+                    },3000);
+                });
+
+                $(".main_image").bind("touchstart",function(){
+                    clearInterval(timer);
+                }).bind("touchend", function(){
+                    timer = setInterval(function(){
+                        $("#btn_next").click();
+                    }, 3000);
+                });
+
+            });
 
 </script>
 {template "content","footer"}
