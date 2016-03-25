@@ -280,11 +280,10 @@ main > section {
 
     background-color: rgba(0,0,0,.4);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    padding: 5px 0;
 }
 
 #navigation.animated-header {
-    padding: 20px 0;
+
     background-color: white;
 }
 
@@ -294,14 +293,16 @@ h1.navbar-brand {
     margin: 0;
     text-transform: uppercase;
 }
-
+.navbar-nav>li>a{padding:30px 10px;}
 .navbar-inverse .navbar-nav > li > a {
     color:#525151;
     font-size: 18px;
+
     text-transform: uppercase;
 }
 .navbar-inverse .navbar-nav > li > a:hover {
-    color: #EAA322;
+    color: white;
+    background: #EAA322;
 }
 
 
@@ -577,8 +578,7 @@ h1.navbar-brand {
 .service-icon {
     border: 3px solid transparent;
     display: inline-block;
-    height: 150px;
-    width: 150px;
+    width: 100%;
     line-height: 101px;
 
 /*    -webkit-transform: rotate(47deg);
@@ -586,19 +586,18 @@ h1.navbar-brand {
         -ms-transform: rotate(47deg);
          -o-transform: rotate(47deg);
             transform: rotate(47deg);*/
-
+/*
     -webkit-transition: all 0.3s ease 0s;
        -moz-transition: all 0.3s ease 0s;
         -ms-transition: all 0.3s ease 0s;
          -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;*/
 }
+.service-item{padding:10px;}
+.service-item:hover  {
 
-/*.service-item:hover .service-icon {
-    border: 3px solid #dbe3e0;
-    margin-bottom: 20px;
-    color: #009ee3;
-}*/
+    box-shadow: 0 0 4px gray;
+}
 
 .service-icon i {
     -webkit-transform: rotate(-48deg);
@@ -633,7 +632,7 @@ h1.navbar-brand {
     margin: 0 1% 1% 0;
     overflow: hidden;
     position: relative;
-    width: 31%;
+    width: 23%;
 }
 
 figcaption.mask {

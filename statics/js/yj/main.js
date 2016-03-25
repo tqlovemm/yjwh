@@ -97,7 +97,7 @@ $(document).ready(function(){
 		}
 	});
 	*/
-    $(window).scroll(function () {
+/*    $(window).scroll(function () {
         if ($(window).scrollTop() > 400) {
             $(".navbar-brand a").css("color","#fff");
             $("#navigation").removeClass("animated-header");
@@ -105,7 +105,7 @@ $(document).ready(function(){
             $(".navbar-brand a").css("color","inherit");
             $("#navigation").addClass("animated-header");
         }
-    });
+    });*/
 	
 	/* ========================================================================= */
 	/*	Fix Slider Height
