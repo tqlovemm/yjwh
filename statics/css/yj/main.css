@@ -280,11 +280,10 @@ main > section {
 
     background-color: rgba(0,0,0,.4);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    padding: 5px 0;
 }
 
 #navigation.animated-header {
-    padding: 20px 0;
+
     background-color: white;
 }
 
@@ -294,10 +293,11 @@ h1.navbar-brand {
     margin: 0;
     text-transform: uppercase;
 }
-
+.navbar-nav>li>a{padding:30px 10px;}
 .navbar-inverse .navbar-nav > li > a {
     color:#525151;
     font-size: 18px;
+
     text-transform: uppercase;
 }
 .navbar-inverse .navbar-nav > li > a:hover {
