@@ -293,7 +293,7 @@ h1.navbar-brand {
     margin: 0;
     text-transform: uppercase;
 }
-.navbar-nav>li>a{padding:30px 10px;}
+.navbar-nav>li>a{padding:35px 10px;}
 .navbar-inverse .navbar-nav > li > a {
     color:#525151;
     font-size: 18px;
