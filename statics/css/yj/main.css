@@ -54,6 +54,7 @@ main > section {
     padding: 30px 0;
 }
 
+
 .btn {
     border-radius: 0;
     border: 0;
@@ -576,8 +577,8 @@ h1.navbar-brand {
 .service-icon {
     border: 3px solid transparent;
     display: inline-block;
-    height: 85px;
-    width: 85px;
+    height: 150px;
+    width: 150px;
     line-height: 101px;
 
 /*    -webkit-transform: rotate(47deg);
@@ -593,11 +594,11 @@ h1.navbar-brand {
             transition: all 0.3s ease 0s;
 }
 
-.service-item:hover .service-icon {
-    border: 3px solid #009ee3;
+/*.service-item:hover .service-icon {
+    border: 3px solid #dbe3e0;
     margin-bottom: 20px;
     color: #009ee3;
-}
+}*/
 
 .service-icon i {
     -webkit-transform: rotate(-48deg);
@@ -1449,3 +1450,4 @@ textarea.form-control {
     header img{width: 80%;}
 
 }
+
