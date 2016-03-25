@@ -1,7 +1,11 @@
 {template "content","header_self"}
-<div class="container" style="margin-top: 20px;">
+<div class="container" style="margin-top: 20px;min-height: 500px;">
+	<ol class="breadcrumb">
+		<li><a href="{siteurl($siteid)}">首页</a></li>
+		<li style="color:#ccc;">{catpos($catid)}</li>
+		<li>{$title}</li>
+	</ol>
 	<div class="row">
-
 		<div class="col-md-3">
 
 			<img class="img-responsive img-thumbnail" alt="{$title}" src="{$thumb}">
@@ -10,7 +14,6 @@
 
 		</div>
 		<div class="col-md-9">
-
 			<div id="Article" style="min-height: 500px;">
 					<span>{$inputtime}&nbsp;&nbsp;&nbsp;</span></h1>
 				{if $description}<div class="summary" >{$description}</div>{/if}

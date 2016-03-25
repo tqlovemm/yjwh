@@ -1394,7 +1394,7 @@ function watermark($source, $target = '',$siteid) {
  * @param $catid 栏目id
  * @param $symbol 栏目间隔符
  */
-function catpos($catid, $symbol=' > '){
+function catpos($catid, $symbol=''){
 	$category_arr = array();
 	$siteids = getcache('category_content','commons');
 	$siteid = $siteids[$catid];
