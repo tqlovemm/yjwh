@@ -59,7 +59,7 @@
                     {loop $data $r}
 
                     <li class="portfolio-item">
-                        <a href="{$v['url']}"><img src="{$v[thumb]}" class="img-responsive" alt="{$v['title']}">
+                        <a href="{$r['url']}"><img src="{$r[thumb]}" class="img-responsive" alt="{$r['title']}">
                         <figcaption class="mask">
                             <h3>{$r['title']}</h3>
                             <p>{str_cut($r['description'],80)} </p>
