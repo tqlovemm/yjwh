@@ -1,4 +1,9 @@
 {template "content","header_self"}
+<style>
+    #masonry .box{margin-bottom: 5px;padding:5px;}
+    #masonry .box:hover{box-shadow: 0 0 4px red;}
+
+</style>
 <script src="{JS_PATH}yj/masonry-docs.js"></script>
 
 <!--main-->
@@ -14,7 +19,7 @@
             <div class="row" id="masonry">
                 {loop $data $r}
 
-                <div class="col-md-3 box">
+                <div class="col-md-3 col-sm-4 col-xs-4 box">
                     <a href="{$r[url]}" target="_blank"{title_style($r[style])}>
                     <img class="img-responsive" src="{$r[thumb]}">
                     <span style="font-size: 12px;">{$r[title]}</span>
@@ -27,7 +32,7 @@
             {/pc}
 
         </div>
-        <div class="col-md-3" style="font-size: 12px;">
+        <div class="col-md-3 hidden-xs hidden-sm" style="font-size: 12px;">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">频道总排行</h3>
