@@ -59,15 +59,15 @@
                     {loop $info $v}
 
                     <li class="portfolio-item">
-                        <img src="{$v[thumb]}" class="img-responsive" alt="{$v['title']}">
+                        <a href="{$v['url']}"><img src="{$v[thumb]}" class="img-responsive" alt="{$v['title']}"></a>
                         <figcaption class="mask">
                             <h3>{$v['title']}</h3>
                             <p>{str_cut($v['description'],80)} </p>
                         </figcaption>
-                        <ul class="external">
+             <!--           <ul class="external">
                             <li><a class="fancybox" title="{str_cut($v['description'],150)}" data-fancybox-group="works" href="{thumb($v[thumb],381,290,0)}"><i class="fa fa-search"></i></a></li>
                             <li><a href="{$v['url']}"><i class="fa fa-link"></i></a></li>
-                        </ul>
+                        </ul>-->
                     </li>
                     {/loop}
                     {/pc}

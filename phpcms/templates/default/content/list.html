@@ -1,23 +1,24 @@
 {template "content","header_self"}
+<script src="{JS_PATH}yj/masonry-docs.js"></script>
+
 <!--main-->
 <div class="container" style="min-height: 700px;">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <ol class="breadcrumb">
                 <li><a href="{siteurl($siteid)}">首页</a></li>
                 <li>{$catname}</li>
             </ol>
 
             {pc:content action="lists" catid="$catid" num="25" order="id DESC" page="$page"}
-            <div class="row">
+            <div class="row" id="masonry">
                 {loop $data $r}
 
-                <div class="col-md-3">
+                <div class="col-md-3 box">
                     <a href="{$r[url]}" target="_blank"{title_style($r[style])}>
                     <img class="img-responsive" src="{$r[thumb]}">
-
-                    <span>{$r[title]}</span>
-                    <span class="rt">【{date('m-d',$r[inputtime])}】</span>
+                    <span style="font-size: 12px;">{$r[title]}</span>
+                    <span style="font-size: 12px;" class="rt">【{date('m-d',$r[inputtime])}】</span>
                     </a>
                 </div>
                 {/loop}
@@ -26,7 +27,7 @@
             {/pc}
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3" style="font-size: 12px;">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">频道总排行</h3>
@@ -62,4 +63,14 @@
     </div>
 
 </div>
+<script>$(function() {
+    var $container = $('#masonry');
+    $container.imagesLoaded(function() {
+        $container.masonry({
+            itemSelector: '.box',
+            gutter: 0,
+            isAnimated: true,
+        });
+    });
+});</script>
 {template "content","footer"}
