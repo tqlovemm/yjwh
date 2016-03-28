@@ -98,8 +98,9 @@
 <!--
 Fixed Navigation
 ==================================== -->
-<header id="navigation" class="navbar-inverse animated-header" style="padding-bottom:1px;border-bottom: 2px solid #EAA322;">
+<header id="navigation" class="navbar-inverse animated-header" style="border-bottom: 2px solid #EAA322;">
 	<div class="container">
+		<div class="row">
 		<div class="navbar-header">
 			<!-- responsive nav button -->
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -112,7 +113,7 @@ Fixed Navigation
 
 			<!-- logo -->
 			<div class="navbar-brand" style="padding: 0;">
-				<a href=""><img style="margin-top: 20px;" class="img-responsive" src="{IMG_PATH}yj/logo.png" alt="遇见传媒"/></a>
+				<a href=""><img class="img-responsive" src="{IMG_PATH}yj/logo.png" alt="遇见传媒"/></a>
 			</div>
 			<!-- /logo -->
 		</div>
@@ -121,8 +122,8 @@ Fixed Navigation
 		<nav class="collapse navbar-collapse navbar-right">
 			<map>
 			{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
-			<ul id="nav" class="nav-site nav navbar-nav  list-inline">
-				<li><a class="yj-home-link" title="" href="{siteurl($siteid)}"><span>首页</span></a></li>
+			<ul id="nav" class="nav-site nav navbar-nav  list-inline text-center">
+				<li style="width: 101px;"><a class="yj-home-link" title="" href="{siteurl($siteid)}"><span>首页</span></a></li>
 				{loop $data $r}
 				<li><a {if $r[catid] == $catid} class="my-active" {/if} href="{$r[url]}"><span>{$r[catname]}</span></a></li>
 				{/loop}
@@ -132,7 +133,7 @@ Fixed Navigation
 
 		</nav>
 		<!-- /main nav -->
-
+</div>
 	</div>
 </header>
 <div id="top" class="hidden-sm hidden-xs"></div>
