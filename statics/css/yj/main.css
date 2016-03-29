@@ -1292,7 +1292,7 @@ textarea.form-control {
     .portfolio-item {
         margin: 0 auto 10px;
         font-size: 14px;
-        width: 280px;
+        width: 100%;
     }
 
     figcaption.mask {
