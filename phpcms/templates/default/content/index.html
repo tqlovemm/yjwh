@@ -11,7 +11,13 @@
                     <ul>
                         {pc:content  action="lists" catid="11" order="updatetime DESC" thumb="1" num="5" return="info"}
                         {loop $info $v}
-                        <li><a href="{$v[url]}"><span style="background: url({$v[thumb]}) center no-repeat;"></span></a></li>
+                        <li>
+                            <a href="{$v[url]}">
+                                <span style="background: url({$v[thumb]}) center no-repeat;"></span>
+                                <div>{$v[title]}</div>
+                            </a>
+                        </li>
+
                         {/loop}
                         {/pc}
                     </ul>
@@ -20,7 +26,19 @@
                 </div>
             </div>
     </section>
+<script>
 
+    $('.main_image li a').mouseover(function(){
+
+        $(".main_image li a div").fadeIn();
+
+    }).mouseleave(function(){
+
+        $(".main_image li a div").fadeOut();
+
+    });
+
+</script>
 
     <section id="what-we-can" style="padding:20px 0;">
         <div class="container">
