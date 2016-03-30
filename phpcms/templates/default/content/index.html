@@ -147,13 +147,13 @@
                         <div class="hotspot-banner pull-left" style="color:#DF9017;">【通知】</div><a class="pull-right" href="/index.php?m=content&c=index&a=lists&catid=35" style="color:#8e8e8e;" title="点击查看更多"> >> </a>
                         <div class="clearfix"></div>
                     </div>
-                    {pc:content  action="lists" catid="35" order="updatetime DESC" thumb="1" num="5" return="info"}
+                    {pc:content  action="lists" catid="35" order="updatetime DESC" num="5" return="info"}
                     <div class="notice-box">
                     {loop $info $v}
                     {$num++}
                         <a href="{$v[url]}"><span>{$num}.</span>{$v[title]}【{date('m-d',$v[inputtime])}】
                             {if $num==1}
-                                {if $v[thumb]!==''}
+                                {if $v[thumb]!=''}
                                 <img class="img-responsive" src="{$v[thumb]}">
                                 {/if}
                             {/if}
@@ -169,7 +169,7 @@
                         <div class="hotspot-banner pull-left" style="color:#DF9017;">【活动】</div><a href="/index.php?m=content&c=index&a=lists&catid=36" class="pull-right" style="color:#8e8e8e;" title="点击查看更多"> >> </a>
                         <div class="clearfix"></div>
                     </div>
-                    {pc:content  action="lists" catid="36" order="updatetime DESC" thumb="1" num="5" return="info"}
+                    {pc:content  action="lists" catid="36" order="updatetime DESC" num="5" return="info"}
                     <div class="notice-box">
                     {loop $info $r}
                         <a href="{$r[url]}">
