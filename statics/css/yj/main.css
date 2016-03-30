@@ -51,7 +51,7 @@ main {
 }
 main > section {
     padding: 0;
-    background-color: #cecece;
+    background-color: #ECECEC;
 
 }
 main> section >.container{background-color: white;padding:20px 15px;}
