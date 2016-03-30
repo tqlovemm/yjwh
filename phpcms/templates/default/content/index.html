@@ -154,7 +154,7 @@
                     <div class="notice-box">
                     {loop $info $v}
                     {$num++}
-                        <a href="{$v[url]}" target="_blank"><span>{$num}.</span>{$v[title]}
+                        <a href="{$v[url]}" target="_blank"><span>{$num}.</span>{str_cut($v[title],60)}
                             <span class="pull-right">【{date('m-d',$v[inputtime])}】</span>
                             {if $num==1}
                                 {if $v[thumb]!=''}
