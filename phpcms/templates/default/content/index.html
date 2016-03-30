@@ -173,7 +173,9 @@
                     <div class="notice-box">
                         <h2 style="color:#545454;">{$v[title]}</h2>
                         <div class="box-content" style="color:#545454;position: relative;">
+                            {if $v[thumb]!=0}
                             <img class="img-responsive content-img" src="{$v[thumb]}">
+                            {/if}
                             <p class="content-text" style="background-color: rgba(255, 165, 0, 0.66);">{$v[description]}</p>
                         </div>
                     </div>
