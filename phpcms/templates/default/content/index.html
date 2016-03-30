@@ -1,6 +1,5 @@
 {template "content","header_self"}
 
-
 <main class="site-content" role="main">
 
     <!--Home Slider==================================== -->
@@ -14,7 +13,11 @@
                         <li>
                             <a href="{$v[url]}">
                                 <span style="background: url({$v[thumb]}) center no-repeat;"></span>
-                                <div>{$v[title]}</div>
+                                <div>
+                                    <h1>{$v[title]}</h1>
+                                    <h3>{$v[description]}</h3>
+
+                                </div>
                             </a>
                         </li>
 
@@ -40,7 +43,7 @@
 
 </script>
 
-    <section id="what-we-can" style="padding:20px 0;">
+    <section id="what-we-can">
         <div class="container">
             <div class="row">
                 {pc:content  action="lists" catid="12" order="updatetime DESC" thumb="1" num="8" return="info"}
@@ -130,18 +133,19 @@
 
         <section id="hotspot">
             <div class="container">
-            <hr style="border-bottom: 1px solid #9f9f9f;">
+            <div class="row">
+                <hr style="border-bottom: 1px solid #9f9f9f;">
 
-             <ul class="list-inline text-center hotspot-title" style="font-size: 25px;margin-bottom: 40px;">
-                 <li class="hidden-sm hidden-xs"><div style="width: 80px;background-color:#DF9017;height: 5px;"></div></li>
-                 <li class="text-center"><h2 style="background-color: #DF9017;padding:3px 20px;">遇见热点</h2></li>
-                 <li class="hidden-sm hidden-xs"><div style="width: 80px;background-color:#DF9017;height: 5px;"></div></li>
-             </ul>
-
+                 <ul class="list-inline text-center hotspot-title" style="font-size: 25px;margin-bottom: 40px;">
+                     <li class="hidden-sm hidden-xs"><div style="width: 80px;background-color:#DF9017;height: 5px;"></div></li>
+                     <li class="text-center"><h2 style="background-color: #DF9017;padding:3px 20px;">遇见热点</h2></li>
+                     <li class="hidden-sm hidden-xs"><div style="width: 80px;background-color:#DF9017;height: 5px;"></div></li>
+                 </ul>
+            </div>
             <div class="row">
                 <div class="col-md-4 notice wow animated zoomInLeft">
                     <div style="border-bottom: 1px solid #9f9f9f;display: block;padding:5px;font-weight: bold;">
-                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【通知】</div><a class="pull-right" href="/index.php?m=content&c=index&a=lists&catid=35" style="color:#DF9017;"> >>  </a>
+                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【通知】</div><a class="pull-right" href="/index.php?m=content&c=index&a=lists&catid=35" style="color:#8e8e8e;" title="点击查看更多"> >> </a>
                         <div class="clearfix"></div>
                     </div>
                     {pc:content  action="lists" catid="35" order="updatetime DESC" thumb="1" num="1" return="info"}
@@ -155,15 +159,13 @@
                         </div>
                         </a>
                     </div>
-                    <div class="clearfix" style="margin-top: 20px;"></div>
-                    <a href="/index.php?m=content&c=index&a=lists&catid=35" style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
                     {/loop}
                     {/pc}
                 </div>
 
                 <div class="col-md-4 wow animated zoomIn">
                     <div style="border-bottom: 1px solid #9f9f9f;display: block;padding:5px;font-weight: bold;">
-                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【活动】</div><a href="/index.php?m=content&c=index&a=lists&catid=36" class="pull-right" style="color:#DF9017;"> >>  </a>
+                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【活动】</div><a href="/index.php?m=content&c=index&a=lists&catid=36" class="pull-right" style="color:#8e8e8e;" title="点击查看更多"> >> </a>
                         <div class="clearfix"></div>
                     </div>
                     {pc:content  action="lists" catid="36" order="updatetime DESC" thumb="1" num="1" return="info"}
@@ -175,15 +177,13 @@
                             <p class="content-text" style="background-color: rgba(255, 165, 0, 0.66);">{$v[description]}</p>
                         </div>
                     </div>
-                    <div class="clearfix" style="margin-top: 20px;"></div>
-                    <a href="/index.php?m=content&c=index&a=lists&catid=36" style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
                     {/loop}
                     {/pc}
                 </div>
 
                 <div class="col-md-4 wow animated zoomInRight ">
                     <div style="border-bottom: 1px solid #9f9f9f;display: block;padding:5px;font-weight: bold;">
-                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【视频】</div><span class="pull-right" style="color:#DF9017;"> >>  </span>
+                        <div class="hotspot-banner pull-left" style="color:#DF9017;">【视频】</div><span class="pull-right" style="color:#8e8e8e;" title="点击查看更多"> >> </span>
                         <div class="clearfix"></div>
                     </div>
                     <div class="notice-box">
@@ -199,8 +199,6 @@
                             </video>
                         </div>
                     </div>
-                    <div class="clearfix" style="margin-top: 20px;"></div>
-                    <a style="padding:2px 10px;background-color:#DF9017;border-radius: 5px;color:black;font-size: 25px;font-weight: 500; ">more+</a>
                 </div>
 
             </div>
