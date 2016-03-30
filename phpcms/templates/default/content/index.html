@@ -187,12 +187,28 @@
                         <div class="hotspot-banner pull-left" style="color:#DF9017;">【视频】</div><span class="pull-right" style="color:#8e8e8e;" title="点击查看更多"> >> </span>
                         <div class="clearfix"></div>
                     </div>
-                    {pc:content  action="lists" catid="37" order="updatetime DESC" num="5" return="info"}
+                    {pc:content  action="lists" catid="37" order="updatetime DESC" num="15" return="info"}
+                    {php $num=0}
                     <div class="notice-box">
                         {loop $info $r}
-                        <a href="{$r[url]}">
-                            <img src="{IMG_PATH}yj/icons/videoNewsLeft.gif">&nbsp;&nbsp;{$r[title]}【{date('m-d',$r[inputtime])}】
+                        {$num++}
+                        {if $num==1}
+
+                        <a href="{$r[url]}" style="float: left;margin-right: 10px;">
+                            <img style="width: 150px;height: 100px;" src="{$r[thumb]}">
                         </a>
+
+                        {elseif $num>5}
+                        <a href="{$r[url]}">
+                            {$r[title]}
+                        </a>
+                        {else}
+
+                        <a href="{$r[url]}">
+                            <img src="{IMG_PATH}yj/icons/videoNewsLeft.gif">&nbsp;&nbsp;{mb_substr($r[title],0,12,"utf-8")}
+                        </a>
+
+                        {/if}
                         {/loop}
                     </div>
                     {/pc}
