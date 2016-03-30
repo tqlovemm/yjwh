@@ -152,10 +152,10 @@
                     {loop $info $v}
                     {$num++}
                         <a href="{$v[url]}"><span>{$num}.</span>{$v[title]}【{date('m-d',$v[inputtime])}】
-
                             {if $num==1}
+                                {if $v[thumb]!==''}
                                 <img class="img-responsive" src="{$v[thumb]}">
-
+                                {/if}
                             {/if}
                         </a>
                     {/loop}
@@ -169,18 +169,16 @@
                         <div class="hotspot-banner pull-left" style="color:#DF9017;">【活动】</div><a href="/index.php?m=content&c=index&a=lists&catid=36" class="pull-right" style="color:#8e8e8e;" title="点击查看更多"> >> </a>
                         <div class="clearfix"></div>
                     </div>
-                    {pc:content  action="lists" catid="36" order="updatetime DESC" thumb="1" num="1" return="info"}
-                    {loop $info $v}
+                    {pc:content  action="lists" catid="36" order="updatetime DESC" thumb="1" num="5" return="info"}
                     <div class="notice-box">
-                        <h2 style="color:#545454;">{$v[title]}</h2>
-                        <div class="box-content" style="color:#545454;position: relative;">
-                            {if $v[thumb]!=0}
-                            <img class="img-responsive content-img" src="{$v[thumb]}">
-                            {/if}
-                            <p class="content-text" style="background-color: rgba(255, 165, 0, 0.66);">{$v[description]}</p>
-                        </div>
-                    </div>
+                    {loop $info $r}
+                        <a href="{$r[url]}">
+                            {if $r[thumb]!=''}
+                            <img style="width: 20px;height: 18px;" src="{$r[thumb]}">
+                            {/if}&nbsp;&nbsp;{$r[title]}【{date('m-d',$r[inputtime])}】
+                        </a>
                     {/loop}
+                    </div>
                     {/pc}
                 </div>
 
