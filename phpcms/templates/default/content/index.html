@@ -187,19 +187,15 @@
                         <div class="hotspot-banner pull-left" style="color:#DF9017;">【视频】</div><span class="pull-right" style="color:#8e8e8e;" title="点击查看更多"> >> </span>
                         <div class="clearfix"></div>
                     </div>
+                    {pc:content  action="lists" catid="37" order="updatetime DESC" num="5" return="info"}
                     <div class="notice-box">
-                        <h2 style="color:#545454;">fwafwef</h2>
-                        <div class="box-content">
-                            <video width="100%" height="100%" controls="controls">
-                                <source src="/statics/video/mov.mp4" type="video/mp4" />
-                                <source src="/statics/video/mov.ogg" type="video/ogg" />
-                                <source src="/statics/video/mov.webm" type="video/webm" />
-                                <object data="/statics/video/mov.mp4" width="320" height="240">
-                                    <embed src="/statics/video/mov.swf" width="320" height="240" />
-                                </object>
-                            </video>
-                        </div>
+                        {loop $info $r}
+                        <a href="{$r[url]}">
+                            <img style="width: 10px;height: 10px;" src="{IMG_PATH}yj/icons/videoNewsLeft.gif">&nbsp;&nbsp;{$r[title]}【{date('m-d',$r[inputtime])}】
+                        </a>
+                        {/loop}
                     </div>
+                    {/pc}
                 </div>
 
             </div>
