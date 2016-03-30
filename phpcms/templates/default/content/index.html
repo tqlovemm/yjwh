@@ -49,7 +49,7 @@
                 {pc:content  action="lists" catid="12" order="updatetime DESC" thumb="1" num="8" return="info"}
                 {loop $info $v}
                     <div class="col-md-2 col-sm-6 col-xs-6 bannerBottom">
-                        <a href="{$v[url]}" target="_blank">
+                        <a href="{$v[url]}">
                             <p class="bannerBottomImage"><img class="center-block" src="{$v[thumb]}"></p>
                             <p class="bannerBottomTitle">{$v['title']}<br>
                                 <span class="bben">{$v['description']}</span>
@@ -115,7 +115,7 @@
                 {pc:content  action="lists" catid="13" order="updatetime DESC" thumb="1" num="8" return="info"}
                 {loop $info $v}
                 <div class="col-md-4 col-sm-6 col-xs-12 text-center wow animated zoomIn">
-                    <a href="{$v[url]}">
+                    <a href="{$v[url]}" target="_blank">
                     <div class="service-item">
                         <div class="service-icon">
                             <img class="img-responsive center-block" src="{$v[thumb]}">
@@ -154,7 +154,7 @@
                     <div class="notice-box">
                     {loop $info $v}
                     {$num++}
-                        <a href="{$v[url]}"><span>{$num}.</span>{$v[title]}【{date('m-d',$v[inputtime])}】
+                        <a href="{$v[url]}" target="_blank"><span>{$num}.</span>{$v[title]}【{date('m-d',$v[inputtime])}】
                             {if $num==1}
                                 {if $v[thumb]!=''}
                                 <img class="img-responsive" src="{$v[thumb]}">
@@ -175,7 +175,7 @@
                     {pc:content  action="lists" catid="36" order="updatetime DESC" num="5" return="info"}
                     <div class="notice-box">
                     {loop $info $r}
-                        <a href="{$r[url]}">
+                        <a href="{$r[url]}" target="_blank">
                             {if $r[thumb]!=''}
                             <img style="width: 20px;height: 18px;" src="{$r[thumb]}">
                             {/if}&nbsp;&nbsp;{$r[title]}【{date('m-d',$r[inputtime])}】
@@ -197,17 +197,17 @@
                         {$num++}
                         {if $num==1}
 
-                        <a href="{$r[url]}" style="float: left;margin-right: 10px;">
+                        <a href="{$r[url]}" target="_blank" style="float: left;margin-right: 10px;">
                             <img style="width: 150px;height: 100px;" src="{$r[thumb]}">
                         </a>
 
                         {elseif $num>5}
-                        <a href="{$r[url]}">
+                        <a href="{$r[url]}" target="_blank">
                             {$r[title]}
                         </a>
                         {else}
 
-                        <a href="{$r[url]}">
+                        <a href="{$r[url]}" target="_blank">
                             <img src="{IMG_PATH}yj/icons/videoNewsLeft.gif">&nbsp;&nbsp;{mb_substr($r[title],0,12,"utf-8")}
                         </a>
 
