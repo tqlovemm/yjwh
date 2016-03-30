@@ -134,7 +134,7 @@
 
     <!--Hotspot  section-->
         <section id="hotspot">
-            <div class="container">
+            <div class="container" style="margin-bottom: 50px;">
             <div class="row">
                 <hr style="border-bottom: 1px solid #9f9f9f;">
 
@@ -154,7 +154,8 @@
                     <div class="notice-box">
                     {loop $info $v}
                     {$num++}
-                        <a href="{$v[url]}" target="_blank"><span>{$num}.</span>{$v[title]}【{date('m-d',$v[inputtime])}】
+                        <a href="{$v[url]}" target="_blank"><span>{$num}.</span>{$v[title]}
+                            <span class="pull-right">【{date('m-d',$v[inputtime])}】</span>
                             {if $num==1}
                                 {if $v[thumb]!=''}
                                 <img class="img-responsive" src="{$v[thumb]}">
@@ -178,7 +179,7 @@
                         <a href="{$r[url]}" target="_blank">
                             {if $r[thumb]!=''}
                             <img style="width: 20px;height: 18px;" src="{$r[thumb]}">
-                            {/if}&nbsp;&nbsp;{$r[title]}【{date('m-d',$r[inputtime])}】
+                            {/if}&nbsp;&nbsp;{str_cut($r[title],60)}<span class="pull-right">【{date('m-d',$r[inputtime])}】</span>
                         </a>
                     {/loop}
                     </div>
