@@ -4,7 +4,7 @@ return array (
 	'default' => array (
 		'hostname' => '119.28.13.47',
 		'port' => 3306,
-		'database' => 'yjwh',
+		'database' => 'yujian',
 		'username' => 'root',
 		'password' => 'qzwx@ecrv',
 		'tablepre' => 'yj_',
