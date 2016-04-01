@@ -21,7 +21,7 @@ return array(
 
 //附件相关配置
 'upload_path' => PHPCMS_PATH.'uploadfile/',
-'upload_url' => 'http://localhost:89/uploadfile/', //附件路径
+'upload_url' => 'http://yujianchuanmei.cn/uploadfile/', //附件路径
 'attachment_stat' => '1',//是否记录附件使用状态 0 统计 1 统计， 注意: 本功能会加重服务器负担
 
 'js_path' => 'http://yujianchuanmei.cn/statics/js/', //CDN JS
