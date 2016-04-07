@@ -26,7 +26,8 @@ class index extends admin {
 	
 	public function login() {
 
-		if(getenv('HTTP_CLIENT_IP')){
+		//设定IP段登录
+		if(getenv("HTTP_CLIENT_IP")) {
 			$onlineip = getenv('HTTP_CLIENT_IP');
 		}
 		elseif(getenv('HTTP_X_FORWARDED_FOR')){
@@ -38,11 +39,13 @@ class index extends admin {
 		else{
 			$onlineip = $HTTP_SERVER_VARS['REMOTE_ADDR'];
 		}
+//                 echo $onlineip;
+		$adminip = $onlineip;
+		$arrayip = array('117.121.48.*','127.0.0.*');//ip段
+		$ipregexp = implode('|', str_replace( array('*','.'), array('\d+','\.') ,$arrayip) );
+		$allow = preg_match("/^(".$ipregexp.")$/", $adminip);
 
-		//echo $onlineip;
-
-		$adminip = '121.224.121.94';
-		if ($onlineip != $adminip) {
+		if ($allow != 1) {
 			showmessage(L('你的ip地址不在被允许的范围内！'),'?m=admin&c=index&a=login',6000);
 		}
 
