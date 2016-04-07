@@ -25,6 +25,27 @@ class index extends admin {
 	}
 	
 	public function login() {
+
+		if(getenv('HTTP_CLIENT_IP')){
+			$onlineip = getenv('HTTP_CLIENT_IP');
+		}
+		elseif(getenv('HTTP_X_FORWARDED_FOR')){
+			$onlineip = getenv('HTTP_X_FORWARDED_FOR');
+		}
+		elseif(getenv('REMOTE_ADDR')){
+			$onlineip = getenv('REMOTE_ADDR');
+		}
+		else{
+			$onlineip = $HTTP_SERVER_VARS['REMOTE_ADDR'];
+		}
+
+		//echo $onlineip;
+
+		$adminip = '127.0.0.1';
+		if ($onlineip != $adminip) {
+			showmessage(L('你的ip地址不在被允许的范围内！'),'?m=admin&c=index&a=login',6000);
+		}
+
 		if(isset($_GET['dosubmit'])) {
 			
 			//不为口令卡验证
