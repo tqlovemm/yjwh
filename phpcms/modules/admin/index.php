@@ -41,7 +41,7 @@ class index extends admin {
 		}
 //                 echo $onlineip;
 		$adminip = $onlineip;
-		$arrayip = array('117.121.48.*','127.0.0.*');//ip段
+		$arrayip = array('121.224.121.94');//ip段
 		$ipregexp = implode('|', str_replace( array('*','.'), array('\d+','\.') ,$arrayip) );
 		$allow = preg_match("/^(".$ipregexp.")$/", $adminip);
 
