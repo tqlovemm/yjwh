@@ -41,7 +41,7 @@ class index extends admin {
 
 		//echo $onlineip;
 
-		$adminip = '127.0.0.1';
+		$adminip = '121.224.121.94';
 		if ($onlineip != $adminip) {
 			showmessage(L('你的ip地址不在被允许的范围内！'),'?m=admin&c=index&a=login',6000);
 		}
