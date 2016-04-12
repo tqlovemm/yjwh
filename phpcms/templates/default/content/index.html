@@ -51,7 +51,7 @@
                 {loop $info $v}
                     <div class="col-md-2 col-sm-6 col-xs-6 bannerBottom">
                         <a href="{$v[url]}">
-                            <p class="bannerBottomImage"><img class="center-block" src="{$v[thumb]}"></p>
+                            <p class="bannerBottomImage"><img class="center-block" src="{$v[thumb]}" alt="{$v['title']}" title="{$v['title']}"></p>
                             <p class="bannerBottomTitle">{$v['title']}<br>
                                 <span class="bben">{$v['description']}</span>
                             </p>
@@ -78,7 +78,7 @@
                     {loop $data $r}
 
                     <li class="portfolio-item">
-                        <a href="{$r['url']}"><img src="{$r[thumb]}" style="height: 200px;width: 100%;" class="img-responsive" alt="{$r['title']}">
+                        <a href="{$r['url']}"><img src="{$r[thumb]}" style="height: 200px;width: 100%;" class="img-responsive" alt="{$r['title']}" title="{$r['title']}">
                         <figcaption class="mask">
                             <h3>{$r['title']}</h3>
                             <p>{str_cut($r['description'],80)} </p>
@@ -159,7 +159,7 @@
                             <span class="pull-right">【{date('m-d',$v[inputtime])}】</span>
                             {if $num==1}
                                 {if $v[thumb]!=''}
-                                <img class="img-responsive" src="{$v[thumb]}">
+                                <img class="img-responsive" src="{$v[thumb]}" alt="{$v['title']}" title="{$v['title']}">
                                 {/if}
                             {/if}
                         </a>
@@ -179,7 +179,7 @@
                     {loop $info $r}
                         <a href="{$r[url]}" target="_blank">
                             {if $r[thumb]!=''}
-                            <img style="width: 20px;height: 18px;" src="{$r[thumb]}">
+                            <img style="width: 20px;height: 18px;" src="{$r[thumb]}" alt="{$r['title']}" title="{$r['title']}">
                             {/if}&nbsp;&nbsp;{str_cut($r[title],60)}<span class="pull-right">【{date('m-d',$r[inputtime])}】</span>
                         </a>
                     {/loop}
@@ -200,7 +200,7 @@
                         {if $num==1}
 
                         <a href="{$r[url]}" target="_blank" style="float: left;margin-right: 10px;">
-                            <img style="width: 150px;height: 100px;" src="{$r[thumb]}">
+                            <img style="width: 150px;height: 100px;" src="{$r[thumb]}" alt="{$r['title']}" title="{$r['title']}">
                         </a>
 
                         {elseif $num>5}
