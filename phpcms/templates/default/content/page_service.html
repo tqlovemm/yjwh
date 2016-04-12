@@ -101,7 +101,7 @@
       {loop $info $v}
         <div class="col-md-3 service home-service text-center">
           <a style="height: 350px;" href="{$v[url]}" rel="new" class="marketing">
-            <span title="270X276" style="background-image:url({$v[thumb]});"></span>
+            <span style="background-image:url({$v[thumb]});"  alt="{$v['title']}" title="{$v['title']}"></span>
             <h3 style="color:#666;">{$v[title]}</h3>
             <i>—————</i>
             <p>{str_cut($v[description],240)}</p>
