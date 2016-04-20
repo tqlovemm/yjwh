@@ -1,3 +1,4 @@
+Sitemap: http://www.yujianchuanmei.cn/sitemap.xml
 #
 # robots.txt for PHPCMS v9
 #
