@@ -1,18 +1,26 @@
 <?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php include template("content","header_self"); ?>
-<div class="container" style="margin-top: 20px;">
-	<div class="row">
+<style>
 
+	#Article .content img{display: block;max-width: 100%;height: auto;}
+
+</style>
+<div class="container" style="margin-top: 20px;min-height: 700px;">
+	<ol class="breadcrumb">
+		<li><a href="<?php echo siteurl($siteid);?>">首页</a></li>
+		<li style="color:#ccc;"><?php echo catpos($catid);?></li>
+		<li><?php echo $title;?></li>
+	</ol>
+	<div class="row">
 		<div class="col-md-3">
 
 			<img class="img-responsive img-thumbnail" alt="<?php echo $title;?>" src="<?php echo $thumb;?>">
-			<h4 style="color:gray;">服务项目：<span style="color:black;"><?php echo $title;?></span></h4>
+			<h4 style="color:gray;">服务项目：<span><?php echo $title;?></span></h4>
 			<h4 style="color:gray;">服务内容：<span><?php echo $description;?></span></h4>
 
 		</div>
 		<div class="col-md-9">
-
 			<div id="Article" style="min-height: 500px;">
-					<span><?php echo $inputtime;?>&nbsp;&nbsp;&nbsp;来源：<?php echo $copyfrom;?>&nbsp;&nbsp;&nbsp;</span></h1>
+					<span><?php echo $inputtime;?>&nbsp;&nbsp;&nbsp;</span></h1>
 				<?php if($description) { ?><div class="summary" ><?php echo $description;?></div><?php } ?>
 				<div class="content">
 					<?php if($allow_visitor==1) { ?>

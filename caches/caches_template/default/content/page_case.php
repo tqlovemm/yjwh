@@ -2,7 +2,8 @@
 
 <main class="site-content" role="main">
     <?php include template("content","crumb"); ?>
-    <div class="container" style="margin-top: 20px;min-height: 35em;padding-bottom:20px;">
+    <section id="case">
+    <div class="container" style="min-height: 35em;padding-bottom:20px;">
 
         <ul id="myTab" class="nav nav-tabs">
             <li class="active"><a href="#brand" data-toggle="tab">品牌设计</a></li>
@@ -18,7 +19,7 @@
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <a href="<?php echo $v['url'];?>" target="_blank">
-                            <p class="bannerBottomImage"><img class="center-block img-thumbnail" title="250x200" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
+                            <p class="bannerBottomImage"><img class="center-block img-thumbnail" alt="<?php echo $v['title'];?>" title="<?php echo $v['title'];?>" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
                             <p class="bannerBottomTitle"><?php echo $v['title'];?><br>
                                 <span style="display: block;"><?php echo str_cut($v['description'],80);?></span>
                             </p>
@@ -35,7 +36,7 @@
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <a href="<?php echo $v['url'];?>" target="_blank">
-                            <p class="bannerBottomImage"><img class="center-block img-thumbnail" title="250x200" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
+                            <p class="bannerBottomImage"><img class="center-block img-thumbnail" alt="<?php echo $v['title'];?>" title="<?php echo $v['title'];?>" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
                             <p class="bannerBottomTitle"><?php echo $v['title'];?><br>
                                 <span style="display: block;"><?php echo str_cut($v['description'],80);?></span>
                             </p>
@@ -51,7 +52,7 @@
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <a href="<?php echo $v['url'];?>" target="_blank">
-                            <p class="bannerBottomImage"><img class="center-block img-thumbnail" title="250x200" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
+                            <p class="bannerBottomImage"><img class="center-block img-thumbnail"  alt="<?php echo $v['title'];?>" title="<?php echo $v['title'];?>" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
                             <p class="bannerBottomTitle"><?php echo $v['title'];?><br>
                                 <span style="display: block;"><?php echo str_cut($v['description'],80);?></span>
                             </p>
@@ -67,7 +68,7 @@
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <a href="<?php echo $v['url'];?>" target="_blank">
-                            <p class="bannerBottomImage"><img class="center-block img-thumbnail" title="250x200" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
+                            <p class="bannerBottomImage"><img class="center-block img-thumbnail"  alt="<?php echo $v['title'];?>" title="<?php echo $v['title'];?>" style="width: 100%;height:200px;" src="<?php echo $v['thumb'];?>"></p>
                             <p class="bannerBottomTitle"><?php echo $v['title'];?><br>
                                 <span style="display: block;"><?php echo str_cut($v['description'],80);?></span>
                             </p>
@@ -87,7 +88,7 @@
 
 
     </div>
-
+    </section>
 
    <!-- <div class="" id="content">
         <div class="col-left left-nav">

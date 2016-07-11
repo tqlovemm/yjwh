@@ -1,4 +1,4 @@
-<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><div class="footer" style="margin-top:20px;background-color: #262626;padding:20px 10%;font-size: 14px;">
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><div class="footer text-center" style="background-color: #262626;padding:20px 10%;font-size: 14px;">
 	<div class="footer-left pull-left">
 		<ul class="list-unstyled list-inline">
 			<li><a href="/"><img src="statics/images/yj/yujian-logo.png" alt="遇见文化传媒" title="年终总结" height="53"/></a><span> |</span></li>
@@ -12,8 +12,8 @@
 	</div>
 	<div class="clearfix"> </div>
 	<div class="row">
-		<ul class="list-unstyled list-inline text-center friendly">
-			<li><a href="<?php echo APP_PATH;?>index.php?m=link" target="_blank">友情链接：</a>
+		<ul class="list-unstyled list-inline friendly">
+			<li><a href="#" target="_blank">友情链接：</a>
 
 				<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"link\" data=\"op=link&tag_md5=0f78b763d64bc584f076557d8f584de9&action=type_list&siteid=%24siteid&order=listorder+DESC&num=20&return=dat\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$link_tag = pc_base::load_app_class("link_tag", "link");if (method_exists($link_tag, 'type_list')) {$dat = $link_tag->type_list(array('siteid'=>$siteid,'order'=>'listorder DESC','limit'=>'20',));}?>
 

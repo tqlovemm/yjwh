@@ -5,11 +5,12 @@
 	.yj-about .col-md-2 a,.yj-about .col-md-2 h3{padding:0 20px;}
 	.yj-about a{color:gray;}
 	.col-auto{padding:20px 0px;}
+	.yj-about .content img{display: block;margin: auto;max-width: 100%;}
 
 </style>
 <main class="site-content" role="main">
 	<?php include template("content","crumb"); ?>
-	<div class="container" style="margin-top: 20px;">
+	<div class="container">
 
 		 <div class="row yj-about">
 

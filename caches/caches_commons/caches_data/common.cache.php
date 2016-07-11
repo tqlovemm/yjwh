@@ -10,7 +10,7 @@ return array (
   'mail_user' => 'admin',
   'mail_auth' => '1',
   'mail_from' => '8495167@qq.com',
-  'mail_password' => '@yujian2016@',
+  'mail_password' => 'yujian@@2016',
   'errorlog_size' => '20',
 );
 ?>

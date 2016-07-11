@@ -87,21 +87,24 @@
 </style>
 
 
-<main class="site-content" role="main">
+<main class="site-content" role="main" style="min-height: 800px;">
   <?php include template("content","crumb"); ?>
-  <div class="container" style="margin-top: 20px;">
+  <section id="service">
+  <div class="container">
 
   <div class="row">
-    <div class="text-center" style="line-height: 4em;font-size: 23px;color: #279;">新启成传媒——整合营销服务提供商，全媒体整合营销的先创者。</div>
+    <div class="text-center" style="line-height: 4em;font-size: 23px;color: #279;">遇见文化传媒——整合营销服务提供商，你的满意是我们的唯一标准。</div>
   </div>
 
     <div class="container_24 row clearfix ">
       <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=dd97ca32f547eaa7a40c521e0554fd2d&action=lists&catid=26&order=updatetime+DESC&thumb=1&num=8&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'26','order'=>'updatetime DESC','thumb'=>'1','limit'=>'8',));}?>
       <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
-        <div class="col-md-3 service home-service">
-          <a style="height: 247px;" href="<?php echo $v['url'];?>" rel="new" class="marketing">
-            <span title="270X276" style="background-image:url(<?php echo $v['thumb'];?>);"><?php echo $v['title'];?></span>
-            <?php echo $v['description'];?>
+        <div class="col-md-3 service home-service text-center">
+          <a style="height: 350px;" href="<?php echo $v['url'];?>" rel="new" class="marketing">
+            <span style="background-image:url(<?php echo $v['thumb'];?>);"  alt="<?php echo $v['title'];?>" title="<?php echo $v['title'];?>"></span>
+            <h3 style="color:#666;"><?php echo $v['title'];?></h3>
+            <i>—————</i>
+            <p><?php echo str_cut($v[description],240);?></p>
           </a>
         </div>
       <?php $n++;}unset($n); ?>
@@ -141,7 +144,7 @@
 
   </div>
 
-
+  </section>
   <!-- <div class="" id="content">
        <div class="col-left left-nav">
            <h1>关于我们</h1>

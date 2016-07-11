@@ -65,6 +65,6 @@ return array(
 'qq_appid' => '',	//QQ号码登录 appid
 'qq_callback' => '',	//QQ号码登录 callback
 
-'admin_url' => '',	//允许访问后台的域名
+'admin_url' => 'mgc.yujianchuanmei.cn',	//允许访问后台的域名
 );
 ?>
