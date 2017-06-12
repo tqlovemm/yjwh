@@ -53,10 +53,10 @@ class index extends admin {
 			$maxloginfailedtimes = getcache('common','commons');
 			$maxloginfailedtimes = (int)$maxloginfailedtimes['maxloginfailedtimes'];
 
-			if($rtime['times'] >= $maxloginfailedtimes) {
+		/*	if($rtime['times'] >= $maxloginfailedtimes) {
 				$minute = 60-floor((SYS_TIME-$rtime['logintime'])/60);
 				if($minute>0) showmessage(L('wait_1_hour',array('minute'=>$minute)));
-			}
+			}*/
 			//查询帐号
 			$r = $this->db->get_one(array('username'=>$username));
 			if(!$r) showmessage(L('user_not_exist'),'?m=admin&c=index&a=login');
